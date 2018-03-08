@@ -9,7 +9,7 @@ get '/' do
 end
 
 post '/hello' do
- "Hola mi perro"
+  "Hola #{params[:name]}"
 end
 
 =begin
