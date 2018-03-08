@@ -1,14 +1,18 @@
 require 'sinatra'
-=begin
-get '/' do
-  'Hello world!'
-end
+
+#get '/' do
+#  'Hello world!'
+#end
 
 get '/' do
   erb :index
 end
 
+post '/hello' do
+ "Hola mi perro"
+end
 
+=begin
 get '/' do
   @name = "Pedro"
   erb :index
@@ -20,7 +24,6 @@ get '/excersise' do
   body "Hola mi mu mu mu Mundo"
 end
 
-=end
 
 #localhost:4567/rectangulo?lado1=3&lado2=5
 get '/rectangulo' do
@@ -38,3 +41,5 @@ get '/cuadro' do
   <label for="name"><input type="text" id="name" name="name">
   <button type="submit">Enviar</button>
 </form>
+
+=end
