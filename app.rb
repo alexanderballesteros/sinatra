@@ -8,9 +8,16 @@ get '/' do
   erb :index
 end
 
+
 post '/hello' do
-  "Hola #{params[:name]}"
-end
+  @name = params["name"]
+  @password = params["password"]
+  @email = params["email"]
+  @url = params["url"]
+  @numero = params["numero"]
+  @fecha = params["fecha"]
+  erb :form
+end	
 
 =begin
 get '/' do
