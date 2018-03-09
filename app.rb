@@ -4,20 +4,30 @@ require 'sinatra'
 #  'Hello world!'
 #end
 
+enable :sessions
+
 get '/' do
-  erb :index
+  erb :index	
 end
 
 
-post '/hello' do
+post '/form' do
   @name = params["name"]
   @password = params["password"]
   @email = params["email"]
   @url = params["url"]
   @numero = params["numero"]
   @fecha = params["fecha"]
-  erb :form
+  session.store("name","#{@name}")
+  session.store("password","#{@password}")
+    erb :form
 end	
+
+get '/form' do
+  	puts session
+  	session.inspect	
+  end 
+
 
 =begin
 get '/' do
